@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0b0b;
+    color: #fff;
+}
+
+.topo {
+    padding: 15px;
+    background: #000;
+    text-align: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: radial-gradient(circle, #1a1a1a, #000);
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    margin: 15px 0;
+    color: #aaa;
+}
+
+.btn {
+    background: #e63946;
+    padding: 12px 25px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background: #111;
+    height: 140px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: #e63946;
+}
+
+.produtos {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.produto {
+    background: #111;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.produto h3 {
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.comprar {
+    display: block;
+    margin-top: 15px;
+    background: #25d366;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
