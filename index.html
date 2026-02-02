@@ -1,19 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>BCL Store</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BCL — Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="home">
+<body class="theme-dark">
+  <main class="center-screen">
+    <!-- Logo SVG inline (substitua se quiser usar imagem externa) -->
+    <div class="logo-wrap">
+      <svg id="logo2" width="220" height="220" viewBox="0 0 100 100" aria-hidden="true">
+        <!-- Example logo: simple shield with gradient -->
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#2D2B8D"/>
+            <stop offset="1" stop-color="#1E9BD1"/>
+          </linearGradient>
+        </defs>
+        <path d="M50 6 L80 20 L90 50 C90 70 70 88 50 94 C30 88 10 70 10 50 L20 20 Z" fill="url(#g1)"/>
+        <text x="50" y="60" text-anchor="middle" fill="#fff" font-size="18" font-family="Inter, Arial">BCL</text>
+      </svg>
+    </div>
 
-  <div class="overlay">
-    <img src="logo2.png" class="logo-center">
-    <p class="subtexto">seja bem vindo ao site da BCL</p>
-    <a href="categorias.html" class="btn">ver produtos</a>
-  </div>
+    <p class="lead">Seja bem-vindo ao site da BCL</p>
+    <a href="categorias.html" class="cta-btn large">Ver produtos</a>
+  </main>
 
+  <script src="script.js"></script>
 </body>
 </html>
-
-

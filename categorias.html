@@ -1,31 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Categorias - BCL</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BCL — Categorias</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="theme-dark">
+  <header class="topbar">
+    <button class="btn-back" onclick="goHome()">Voltar</button>
+    <h1 class="page-title">Categorias</h1>
+    <button class="cart-toggle" onclick="toggleCart()" aria-label="Abrir carrinho">Carrinho (<span id="cart-count">0</span>)</button>
+  </header>
 
-<header>
-  <img src="images/logo.png" class="logo-topo">
-</header>
+  <main class="container">
+    <section class="cards-grid">
+      <a class="card" href="vip.html" aria-label="VIPs">
+        <div class="card-icon">👑</div>
+        <h3>VIPs</h3>
+      </a>
 
-<main class="container">
+      <a class="card" href="carros.html" aria-label="Carros VIP">
+        <div class="card-icon">🚗</div>
+        <h3>Carros VIP</h3>
+      </a>
 
-  <h1 class="titulo">Categorias</h1>
+      <a class="card" href="corps.html" aria-label="Corps">
+        <div class="card-icon">🏙️</div>
+        <h3>Corps</h3>
+      </a>
 
-  <div class="cards">
-    <a href="vip.html" class="card">VIPs</a>
-    <a href="veiculos.html" class="card">Veículos VIP</a>
-    <a href="faccoes.html" class="card">Facções</a>
-    <a href="corps.html" class="card">Corps</a>
-    <a href="extras.html" class="card">Extras</a>
+      <a class="card" href="facs.html" aria-label="Facções">
+        <div class="card-icon">🛡️</div>
+        <h3>Facções</h3>
+      </a>
+
+      <a class="card" href="extras.html" aria-label="Extras">
+        <div class="card-icon">✨</div>
+        <h3>Extras para Corps e Facções</h3>
+      </a>
+    </section>
+  </main>
+
+  <div id="cart-panel" class="cart-panel" hidden>
+    <!-- Cart rendered by script.js -->
   </div>
 
-  <a href="index.html" class="btn voltar">voltar</a>
+  <div id="toast" class="toast" aria-hidden="true"></div>
 
-</main>
-
+  <script src="script.js"></script>
 </body>
 </html>
