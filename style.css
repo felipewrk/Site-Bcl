@@ -1,66 +1,83 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    min-height: 100vh;
+  background: #000;
+  color: #fff;
 }
 
-/* PÁGINA INICIAL */
+/* página inicial */
 .home {
-    background-image: url("logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  background: #000;
+  height: 100vh;
 }
 
 .overlay {
-    text-align: center;
-    margin-bottom: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.subtitulo {
-    color: #ccc;
-    margin-bottom: 20px;
+.logo-principal {
+  width: 280px;
+  margin-bottom: 20px;
 }
 
-.botao {
-    background-color: #e63946;
-    color: #fff;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 6px;
+.subtexto {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
 }
 
-/* PÁGINA CATEGORIAS */
-.categorias {
-    background-color: #000;
-    color: #fff;
-    padding: 40px;
+.btn {
+  background: #ff2d2d;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.categorias h1 {
-    text-align: center;
-    margin-bottom: 30px;
+.btn:hover {
+  background: #d92020;
+}
+
+/* categorias */
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-topo {
+  width: 120px;
 }
 
 .lista {
-    list-style: none;
-    max-width: 400px;
-    margin: auto;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.lista ul {
+  list-style: none;
+  margin-bottom: 30px;
 }
 
 .lista li {
-    background: #111;
-    margin-bottom: 15px;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
+  background: #111;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.discord {
+  background: #5865f2;
 }
