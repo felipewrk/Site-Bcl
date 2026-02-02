@@ -10,9 +10,8 @@ body {
   color: #fff;
 }
 
-/* página inicial */
+/* HOME */
 .home {
-  background: #000;
   height: 100vh;
 }
 
@@ -22,18 +21,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 .logo-principal {
-  width: 280px;
-  margin-bottom: 20px;
+  width: 300px;
+  animation: fade 1.5s;
 }
 
 .subtexto {
-  font-size: 14px;
+  margin: 15px 0;
   opacity: 0.8;
-  margin-bottom: 20px;
 }
 
 .btn {
@@ -42,7 +39,6 @@ body {
   padding: 12px 30px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
   transition: 0.3s;
 }
 
@@ -50,34 +46,89 @@ body {
   background: #d92020;
 }
 
-/* categorias */
+/* HEADER */
 header {
-  padding: 20px;
-  text-align: center;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-topo {
   width: 120px;
 }
 
-.lista {
-  max-width: 400px;
-  margin: 40px auto;
+/* CATEGORIAS */
+.categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: #111;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #ff2d2d;
+  transform: scale(1.05);
+}
+
+/* PRODUTOS */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.produto {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.lista ul {
-  list-style: none;
-  margin-bottom: 30px;
+.produto button {
+  margin-top: 10px;
+  width: 100%;
 }
 
-.lista li {
+/* CARRINHO */
+.carrinho {
+  cursor: pointer;
+}
+
+.cart {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
   background: #111;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 6px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.cart.open {
+  right: 0;
 }
 
 .discord {
   background: #5865f2;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+
+@keyframes fade {
+  from {opacity:0}
+  to {opacity:1}
 }

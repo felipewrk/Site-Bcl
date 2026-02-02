@@ -1,67 +1,43 @@
-const whatsapp = "5599999999999";
+const produtos = [
+  { nome: "VIP Bronze", preco: 20 },
+  { nome: "VIP Prata", preco: 40 },
+  { nome: "VIP Ouro", preco: 60 },
+  { nome: "Carro VIP", preco: 50 },
+  { nome: "Base Privada", preco: 80 }
+]
 
-const produtos = {
-    vips: [
-        {
-            nome: "VIP Bronze",
-            desc: "Benefícios básicos no servidor",
-            preco: "R$ 10,00"
-        },
-        {
-            nome: "VIP Ouro",
-            desc: "Benefícios avançados no servidor",
-            preco: "R$ 25,00"
-        }
-    ],
+let carrinho = []
 
-    veiculos: [
-        {
-            nome: "Carro VIP X",
-            desc: "Veículo exclusivo VIP",
-            preco: "R$ 40,00"
-        }
-    ],
+const area = document.getElementById("produtos")
+const qtd = document.getElementById("qtd")
+const cartBox = document.getElementById("cart")
+const cartItems = document.getElementById("cart-items")
 
-    corps: [
-        {
-            nome: "Corp Exclusiva",
-            desc: "Criação de corporação",
-            preco: "R$ 100,00"
-        }
-    ],
+if (area) {
+  produtos.forEach(p => {
+    area.innerHTML += `
+      <div class="produto">
+        <h3>${p.nome}</h3>
+        <p>R$ ${p.preco}</p>
+        <button class="btn" onclick="add('${p.nome}')">adicionar</button>
+      </div>
+    `
+  })
+}
 
-    facs: [
-        {
-            nome: "Facção Premium",
-            desc: "Criação de facção",
-            preco: "R$ 120,00"
-        }
-    ],
+function add(nome) {
+  carrinho.push(nome)
+  qtd.innerText = carrinho.length
+  renderCart()
+}
 
-    extras: [
-        {
-            nome: "Skin Extra",
-            desc: "Skin exclusiva para corp ou fac",
-            preco: "R$ 15,00"
-        }
-    ]
-};
+function toggleCart() {
+  cartBox.classList.toggle("open")
+}
 
-function abrirCategoria(cat) {
-    const area = document.getElementById("produtos");
-    area.innerHTML = "";
-
-    produtos[cat].forEach(p => {
-        area.innerHTML += `
-            <div class="produto">
-                <h3>${p.nome}</h3>
-                <p>${p.desc}</p>
-                <p>${p.preco}</p>
-                <a class="comprar" target="_blank"
-                href="https://wa.me/${whatsapp}?text=Quero comprar ${p.nome}">
-                Comprar no WhatsApp
-                </a>
-            </div>
-        `;
-    });
+function renderCart() {
+  cartItems.innerHTML = ""
+  carrinho.forEach(i => {
+    cartItems.innerHTML += `<li>${i}</li>`
+  })
 }
