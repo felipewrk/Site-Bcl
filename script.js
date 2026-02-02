@@ -1,9 +1,9 @@
 const produtos = [
-  { nome: "VIP Bronze", preco: 20 },
-  { nome: "VIP Prata", preco: 40 },
-  { nome: "VIP Ouro", preco: 60 },
-  { nome: "Carro VIP", preco: 50 },
-  { nome: "Base Privada", preco: 80 }
+  { nome: "VIP Alpha", preco: 6,99 },
+  { nome: "VIP Epsylon", preco: 9,99 },
+  { nome: "VIP Sigma", preco: 19,99 },
+  { nome: "VIP Omega", preco: 24,99 },
+  { nome: "Base Privada", preco: 49,99 }
 ]
 
 let carrinho = []
@@ -41,3 +41,4 @@ function renderCart() {
     cartItems.innerHTML += `<li>${i}</li>`
   })
 }
+
