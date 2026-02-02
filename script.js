@@ -1,44 +1,26 @@
-const produtos = [
-  { nome: "VIP Alpha", preco: 6,99 },
-  { nome: "VIP Epsylon", preco: 9,99 },
-  { nome: "VIP Sigma", preco: 19,99 },
-  { nome: "VIP Omega", preco: 24,99 },
-  { nome: "Base Privada", preco: 49,99 }
-]
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []
 
-let carrinho = []
+function addCarrinho(nome, preco) {
+  carrinho.push({ nome, preco })
+  localStorage.setItem('carrinho', JSON.stringify(carrinho))
+  alert('adicionado ao carrinho')
+}
 
-const area = document.getElementById("produtos")
-const qtd = document.getElementById("qtd")
-const cartBox = document.getElementById("cart")
-const cartItems = document.getElementById("cart-items")
+function carregarCarrinho() {
+  const itens = document.getElementById('itens')
+  const total = document.getElementById('total')
 
-if (area) {
-  produtos.forEach(p => {
-    area.innerHTML += `
-      <div class="produto">
-        <h3>${p.nome}</h3>
-        <p>R$ ${p.preco}</p>
-        <button class="btn" onclick="add('${p.nome}')">adicionar</button>
-      </div>
-    `
+  if (!itens) return
+
+  itens.innerHTML = ''
+  let soma = 0
+
+  carrinho.forEach(item => {
+    itens.innerHTML += `<p>${item.nome} - R$ ${item.preco}</p>`
+    soma += item.preco
   })
+
+  total.innerText = 'total: R$ ' + soma
 }
 
-function add(nome) {
-  carrinho.push(nome)
-  qtd.innerText = carrinho.length
-  renderCart()
-}
-
-function toggleCart() {
-  cartBox.classList.toggle("open")
-}
-
-function renderCart() {
-  cartItems.innerHTML = ""
-  carrinho.forEach(i => {
-    cartItems.innerHTML += `<li>${i}</li>`
-  })
-}
-
+carregarCarrinho()
